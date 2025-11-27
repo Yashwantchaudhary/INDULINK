@@ -6,7 +6,7 @@ import 'package:flutter/foundation.Dart' show kIsWeb;
 class ApiConnectionDiagnostics {
   static Future<Map<String, dynamic>> runDiagnostics() async {
     final results = <String, dynamic>{};
-    final baseUrl = 'http://127.0.0.1:5000';
+    final baseUrl = 'https://indulink-1.onrender.com';
     
     print('🔍 ========== API CONNECTION DIAGNOSTICS ==========');
     

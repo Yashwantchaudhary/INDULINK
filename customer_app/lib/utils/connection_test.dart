@@ -50,11 +50,10 @@ class ConnectionTest {
         content: const Text(
           'Cannot connect to backend server.\n\n'
           'Troubleshooting steps:\n'
-          '1. Start backend: cd backend && npm start\n'
-          '2. Check IP address in app_config.dart\n'
-          '3. Ensure same WiFi network\n'
-          '4. Check firewall settings\n'
-          '5. Try alternative IP addresses'
+          '1. Check if Render service is running\n'
+          '2. Verify internet connection\n'
+          '3. Check https://indulink-1.onrender.com/health\n'
+          '4. Contact support if issue persists'
         ),
         actions: [
           TextButton(
@@ -66,14 +65,10 @@ class ConnectionTest {
     );
   }
 
-  // Test specific IP addresses
+  // Test production backend
   static Future<void> testMultipleIPs() async {
     final ips = [
-      'http://10.10.9.113:5000',
-      'http://192.168.137.1:5000',
-      'http://192.168.1.100:5000',
-      'http://localhost:5000',
-      'http://127.0.0.1:5000',
+      'https://indulink-1.onrender.com',
     ];
 
     print('\n🔍 Testing multiple IP addresses...\n');

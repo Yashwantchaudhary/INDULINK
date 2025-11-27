@@ -2,30 +2,15 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 
 class AppConfig {
-  // API Configuration - Dynamic based on platform
+  // API Configuration - Production URL
   static String get apiBaseUrl {
-    // For web builds, use 127.0.0.1 (more reliable than localhost for CORS)
-    if (kIsWeb) {
-      return 'http://127.0.0.1:5000/api';
-    }
-    // For physical devices, use the computer's IP (try different formats)
-    if (Platform.isAndroid || Platform.isIOS) {
-      // Primary IP address - update this to match your computer's IP
-      return 'http://10.10.9.113:5000/api';
-      // Alternative IPs to try if the above doesn't work:
-      // return 'http://192.168.137.1:5000/api';  // Virtual network adapter
-      // return 'http://192.168.1.100:5000/api';  // Alternative subnet
-      // return 'http://10.0.0.2:5000/api';       // Common Android emulator IP
-    }
-    // For emulators and other platforms, use localhost
-    return 'http://localhost:5000/api';
+    // Production backend hosted on Render
+    return 'https://indulink-1.onrender.com/api';
   }
 
-  // API URL is now automatically configured based on platform:
-  // - Android/iOS physical devices: http://10.10.9.232:5000/api (your PC's IP)
-  // - Emulators/Simulators/Web: http://localhost:5000/api
-  // Backend runs on port 5000 by default
-  // For web development, ensure backend has CORS enabled
+  // API URL is now configured for production:
+  // - All platforms: https://indulink-1.onrender.com/api
+  // Backend is hosted on Render
 
   // Debug method to check current API URL
   static void printCurrentApiUrl() {
@@ -57,12 +42,9 @@ class AppConfig {
     } catch (e) {
       print('❌ Connection failed: $e');
       print('💡 Troubleshooting steps:');
-      print('   1. Backend server is running: cd backend && npm start');
-      print('   2. Check if port 5000 is open: netstat -ano | findstr :5000');
-      print('   3. Firewall: Allow Node.js through Windows Firewall');
-      print('   4. IP address is correct: $apiBaseUrl');
-      print('   5. Same WiFi network for both devices');
-      print('   6. Try alternative IPs: 192.168.137.1, 192.168.1.100');
+      print('   1. Check if production backend is running: https://indulink-1.onrender.com/health');
+      print('   2. Verify internet connection');
+      print('   3. Check if Render service is active');
       return false;
     }
   }
