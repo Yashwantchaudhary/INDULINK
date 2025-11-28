@@ -153,7 +153,6 @@ app.use('/api/dashboard', require('./routes/dashboardRoutes'));
 app.use('/api/rfq', require('./routes/rfqRoutes'));
 app.use('/api/notifications', require('./routes/notificationRoutes'));
 app.use('/api/wishlist', require('./routes/wishlistRoutes'));
-app.use('/api/loyalty', require('./routes/loyaltyRoutes'));
 app.use('/api/admin', require('./routes/adminRoutes')); // Admin routes
 
 // Seeding Routes (Admin only - for development/testing)

@@ -49,7 +49,6 @@ import 'screens/scanner/barcode_scanner_screen.dart';
 import 'screens/search/modern_search_screen.dart';
 import 'screens/legal/privacy_policy_screen.dart';
 import 'screens/legal/terms_conditions_screen.dart';
-import 'screens/loyalty/premium_loyalty_screen.dart';
 import 'screens/recommendations/premium_recommendations_screen.dart';
 import 'screens/support/help_support_screen.dart';
 
@@ -198,8 +197,6 @@ class AppRoutes {
   static const String privacyPolicy = '/privacy-policy';
   static const String termsConditions = '/terms-conditions';
 
-  // Loyalty Routes
-  static const String loyalty = '/loyalty';
 
   // Recommendations Routes
   static const String recommendations = '/recommendations';
@@ -416,9 +413,6 @@ class AppRoutes {
       case termsConditions:
         return MaterialPageRoute(builder: (_) => const TermsConditionsScreen());
 
-      // Loyalty Routes
-      case loyalty:
-        return MaterialPageRoute(builder: (_) => const PremiumLoyaltyScreen());
 
       // Recommendations Routes
       case recommendations:
